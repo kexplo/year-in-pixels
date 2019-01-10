@@ -13,13 +13,13 @@ block content
         div.item
           span
           div.days
-            - each _, i in Array(31)
+            each _, i in Array(31)
               span.day= i+1
-        - each _, i in Array(grid[prop])
+        each _, i in Array(grid[prop])
           - for (var prop in grid)
-            div.item.month(data-month="#{prop}")
+            div.item.month(data-month=prop)
               span= prop[0]
-              - each _, i in Array(grid[prop])
+              each _, i in Array(grid[prop])
                 a(href="#", data-mood="0")
     .column
       .interface
@@ -28,8 +28,8 @@ block content
           form(id="submitMood", action="")
             - for (var prop in moodOptions)
               div
-                input(type="radio", class="mood-#{prop}" id="#{moodOptions[prop]}", name="dayMood", value="#{prop}")
-                label(for="#{moodOptions[prop]}")
+                input(type="radio", class="mood-" + prop, id=moodOptions[prop], name="dayMood", value=prop)
+                label(for=moodOptions[prop])
           #message
             p 
               | Your day has been

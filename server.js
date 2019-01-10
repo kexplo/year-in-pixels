@@ -3,7 +3,7 @@ var app = express();
 
 app.use(express.static('public'));
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 function daysInMonth(month) {
   var year = (new Date()).getFullYear();
